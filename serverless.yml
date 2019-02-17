@@ -1,0 +1,17 @@
+
+service: thumbnail-handler # NOTE: update this with your service name
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+
+
+functions:
+  thumbnail:
+    handler: handler.thumbnail
+    role: arn:aws:iam::357355959826:role/lambda-sqs-s3
+
+    events:
+      - sns: arn:aws:sns:us-east-1:357355959826:s3-put-object-topic
+
+
