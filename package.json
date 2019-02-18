@@ -1,5 +1,5 @@
 {
-  "name": "thumbnail-handler",
+  "name": "thumbnail-handler-",
   "version": "1.0.0",
   "description": "",
   "main": "handler.js",
@@ -12,5 +12,8 @@
   "dependencies": {
     "aws-sdk": "^2.404.0",
     "jimp": "^0.6.0"
+  },
+  "devDependencies": {
+    "serverless-offline": "^4.4.2"
   }
 }

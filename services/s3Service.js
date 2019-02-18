@@ -14,8 +14,10 @@ const getObject = (bucket, key) => {
             Bucket: BUCKET,
             Key: key
         }, (err, data) => {
-            reject(err);
-            resolve(data.Body);
+            if(err)
+                return reject(err);
+            
+            return resolve(data.Body);
         });
     });
 };
@@ -27,8 +29,10 @@ const putObject = (buffer, filename) => {
             Key: 'thumbnail' + filename,
             Body: buffer, 
         }, (err, data) => {
-            reject(err);
-            resolve(data);
+            if(err)
+                return reject(err);
+            
+            return resolve(data);
         });
     });
 };
